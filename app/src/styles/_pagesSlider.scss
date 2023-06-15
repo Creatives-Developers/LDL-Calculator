@@ -1,0 +1,10 @@
+@import "./shared";
+
+.pages-slider {
+  flex-grow: 1;
+  .page {
+    border: 1px solid red;
+    height: 150px;
+    margin: 10px;
+  }
+}

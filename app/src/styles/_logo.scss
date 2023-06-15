@@ -1,0 +1,11 @@
+@import "./shared";
+
+.logo-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  img {
+    width: 100%;
+    max-width: 200px;
+  }
+}
