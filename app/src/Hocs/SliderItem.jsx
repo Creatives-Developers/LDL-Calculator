@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 export default function SliderItem({ children, page, direction, variants }) {
   return (
     <motion.div
+      className="page-wrapper"
       key={page}
       custom={direction}
       variants={variants}

@@ -3,7 +3,7 @@ import Logo from "./components/Logo";
 import PagesSlider from "./components/PagesSlider";
 
 function Home() {
-  const [[page, direction], setPage] = useState([0, 0]);
+  const [[page, direction], setPage] = useState([1, 0]);
   const maxIndex = 3;
 
   const paginate = (newDirection) => {
@@ -13,15 +13,10 @@ function Home() {
   };
 
   return (
-    <section
-      className="home-container"
-      onClick={() => {
-        paginate(1);
-      }}
-    >
+    <section className="home-container">
       <article className="pages-container">
         <Logo />
-        <PagesSlider {...{ page, direction }} />
+        <PagesSlider {...{ page, direction, paginate }} />
       </article>
     </section>
   );

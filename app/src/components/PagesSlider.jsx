@@ -6,7 +6,7 @@ import { variants } from "../animations/slider";
 import SliderItem from "../Hocs/SliderItem";
 import { AnimatePresence } from "framer-motion";
 
-export default function PagesSlider({ page, direction }) {
+export default function PagesSlider({ page, direction, paginate }) {
   return (
     <section className="pages-slider">
       <AnimatePresence initial={false}>
@@ -18,7 +18,7 @@ export default function PagesSlider({ page, direction }) {
               variants,
             }}
           >
-            <PageOne />
+            <PageOne paginate={paginate} />
           </SliderItem>
         )}
         {page === 1 && (
@@ -27,9 +27,10 @@ export default function PagesSlider({ page, direction }) {
               page,
               direction,
               variants,
+              paginate,
             }}
           >
-            <PageTwo />
+            <PageTwo paginate={paginate} />
           </SliderItem>
         )}
         {page === 2 && (
@@ -38,9 +39,10 @@ export default function PagesSlider({ page, direction }) {
               page,
               direction,
               variants,
+              paginate,
             }}
           >
-            <PageThree />
+            <PageThree paginate={paginate} />
           </SliderItem>
         )}
       </AnimatePresence>

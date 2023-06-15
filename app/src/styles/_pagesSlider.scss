@@ -1,10 +1,105 @@
 @import "./shared";
 
+$paddingValue: 1.2rem;
 .pages-slider {
-  flex-grow: 1;
-  .page {
-    border: 1px solid red;
-    height: 150px;
-    margin: 10px;
+  height: 100%;
+  .page-wrapper {
+    height: inherit;
+    .page {
+      position: relative;
+      padding: 15px;
+      height: inherit;
+      display: flex;
+      flex-direction: column;
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .patient-criteria,
+      .patient-treatment {
+        padding: $paddingValue;
+        p {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+        .answers-container {
+          margin-top: 1rem;
+          .answer {
+            .p-checkbox .p-checkbox-box.p-highlight {
+              background: $primary-color;
+              border: $primary-color;
+            }
+            margin: 20px 0;
+            padding-inline-start: 1.5rem;
+            label {
+              margin-inline-start: 5px;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      footer {
+        margin-top: auto;
+        padding: 10px 1rem;
+        display: flex;
+        justify-content: flex-end;
+        &.space-bwteen {
+          justify-content: space-between;
+        }
+        button {
+          background: $primary-color;
+        }
+      }
+
+      &.page-one {
+        .patient-ldl {
+          padding: $paddingValue;
+          .input-container {
+            margin-top: 25px;
+            @include centerChilds;
+            flex-flow: row wrap;
+            gap: 2rem 4rem;
+
+            .input-item {
+              font-size: 1rem;
+              padding: 10px;
+              .p-inputnumber {
+                margin-top: 5px;
+                filter: drop-shadow(0 4px 4px #0000003a);
+              }
+              .p-inputtext {
+                padding: 10px;
+              }
+            }
+          }
+        }
+      }
+      &.page-two {
+        .conclusion {
+          padding: $paddingValue;
+          .sub-title {
+            font-size: 0.8rem;
+          }
+          .target {
+            padding: 20px 1rem;
+            font-size: 1.65rem;
+            // text-align: center;
+            span {
+              padding-inline-start: 5px;
+              &.value {
+                background: $value-background;
+                margin-inline-start: 10px;
+                padding: 10px;
+                border-radius: 5px;
+              }
+            }
+            .hint {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
   }
 }
