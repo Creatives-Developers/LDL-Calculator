@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.f5d0059a.css",
-    "main.js": "/static/js/main.6adb8fc3.js",
-    "static/js/787.c1112931.chunk.js": "/static/js/787.c1112931.chunk.js",
-    "static/media/primeicons.svg": "/static/media/primeicons.e1441b135b3ca9ad643c.svg",
-    "static/media/primeicons.eot": "/static/media/primeicons.d44157bdfa026dc877af.eot",
-    "static/media/primeicons.woff": "/static/media/primeicons.10d3152104f2208ac82a.woff",
-    "static/media/primeicons.ttf": "/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
-    "static/media/primeicons.woff2": "/static/media/primeicons.78172950b335ccdb94e2.woff2",
-    "static/media/color.png": "/static/media/color.6441e63a57ccc5105bad.png",
-    "index.html": "/index.html",
-    "main.f5d0059a.css.map": "/static/css/main.f5d0059a.css.map",
-    "main.6adb8fc3.js.map": "/static/js/main.6adb8fc3.js.map",
-    "787.c1112931.chunk.js.map": "/static/js/787.c1112931.chunk.js.map"
+    "main.css": "/LDL-Calculator/static/css/main.8f436320.css",
+    "main.js": "/LDL-Calculator/static/js/main.30df75dc.js",
+    "static/js/787.c1112931.chunk.js": "/LDL-Calculator/static/js/787.c1112931.chunk.js",
+    "static/media/primeicons.svg": "/LDL-Calculator/static/media/primeicons.e1441b135b3ca9ad643c.svg",
+    "static/media/primeicons.eot": "/LDL-Calculator/static/media/primeicons.d44157bdfa026dc877af.eot",
+    "static/media/primeicons.woff": "/LDL-Calculator/static/media/primeicons.10d3152104f2208ac82a.woff",
+    "static/media/primeicons.ttf": "/LDL-Calculator/static/media/primeicons.ea5358601d0a3fd6670b.ttf",
+    "static/media/primeicons.woff2": "/LDL-Calculator/static/media/primeicons.78172950b335ccdb94e2.woff2",
+    "static/media/color.png": "/LDL-Calculator/static/media/color.6441e63a57ccc5105bad.png",
+    "index.html": "/LDL-Calculator/index.html",
+    "main.8f436320.css.map": "/LDL-Calculator/static/css/main.8f436320.css.map",
+    "main.30df75dc.js.map": "/LDL-Calculator/static/js/main.30df75dc.js.map",
+    "787.c1112931.chunk.js.map": "/LDL-Calculator/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5d0059a.css",
-    "static/js/main.6adb8fc3.js"
+    "static/css/main.8f436320.css",
+    "static/js/main.30df75dc.js"
   ]
 }
