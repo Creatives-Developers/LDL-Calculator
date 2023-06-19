@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   ldlValue: "" /* mmol/L */,
   criteriaApplyOnPatient: [],
+  patientTreatment: "",
 };
 
 const ldlData = createSlice({
@@ -24,11 +25,24 @@ const ldlData = createSlice({
         : criteriaApplyOnPatient.push(action.payload);
       return {
         ...state,
-        criteriaApplyOnPatient: criteriaApplyOnPatient,
+        criteriaApplyOnPatient,
       };
+    },
+    setPatientTreatment: (state, action) => {
+      return {
+        ...state,
+        patientTreatment: action.payload,
+      };
+    },
+    resetLdlData: (state, action) => {
+      return initialState;
     },
   },
 });
-export const { setLdlValue, updateSelectedCriteriaApplyOnPatient } =
-  ldlData.actions;
+export const {
+  setLdlValue,
+  updateSelectedCriteriaApplyOnPatient,
+  setPatientTreatment,
+  resetLdlData,
+} = ldlData.actions;
 export default ldlData.reducer;

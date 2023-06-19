@@ -3,7 +3,7 @@ import Logo from "./components/Logo";
 import PagesSlider from "./components/PagesSlider";
 
 function Home() {
-  const [[page, direction], setPage] = useState([1, 0]);
+  const [[page, direction], setPage] = useState([2, 0]);
   const maxIndex = 3;
 
   const paginate = (newDirection) => {

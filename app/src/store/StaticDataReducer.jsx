@@ -47,35 +47,91 @@ const initialState = {
     question: `Patient's Current Treatment`,
     answers: [
       {
-        id: "ans-1",
+        id: "ans_1",
         message: "No Current LLA medication (Naïve Patient)",
       },
       {
-        id: "ans-2",
+        id: "ans_2",
         message: "Moderate intensity statin ",
       },
       {
-        id: "ans-3",
+        id: "ans_3",
         message: "Moderate intensity statin plus ezetimibe",
       },
       {
-        id: "ans-4",
+        id: "ans_4",
         message: "High intensity statin ",
       },
       {
-        id: "ans-5",
+        id: "ans_5",
         message: "High intensity statin plus ezetimibe",
       },
-      {
-        id: "ans-6",
-        message: "PCSK9 inhibitor ",
-      },
-      {
-        id: "ans-7",
-        message: "PCSK9 inhibitor plus high intensity statin",
-      },
+      // {
+      //   id: "ans-6",
+      //   message: "PCSK9 inhibitor ",
+      // },
+      // {
+      //   id: "ans-7",
+      //   message: "PCSK9 inhibitor plus high intensity statin",
+      // },
     ],
     choiseEightMessage: `This is not a "very risk patient",kindly refer back to ESC 2019 guidelines for LDL-C targets recommendations`,
+  },
+  pageThree: {
+    data: {
+      ans_1: [
+        {
+          message: `Add Moderate intensity statin + ezetimibe`,
+          estimatedReduction: 45,
+        },
+        {
+          message: `Add High intensity statin + ezetimibe`,
+          estimatedReduction: 65,
+        },
+        {
+          message: `Add high intensity statin + ezetimibe + PCSK9 inhibitor`,
+          estimatedReduction: 85,
+        },
+      ],
+      ans_2: [
+        { message: `Add ezetimibe`, estimatedReduction: 15 },
+        {
+          message: `Uptitrate to High intensity statin + ezetimibe`,
+          estimatedReduction: 21,
+        },
+        {
+          message: `Uptitrate to High intensity statin + ezetimibe + PCSK9 inhibitor`,
+          estimatedReduction: 81,
+        },
+      ],
+      ans_3: [
+        {
+          message: `Uptitrate to High intensity statin + ezetimibe`,
+          estimatedReduction: 6,
+        },
+        {
+          message: `Uptitrate to High intensity statin + ezetimibe + PCSK9 inhibitor`,
+          estimatedReduction: 66,
+        },
+      ],
+      ans_4: [
+        {
+          message: `Add ezetimibe`,
+          estimatedReduction: 6,
+        },
+        {
+          message: `Add ezetimibe + PCSK9 inhibitor`,
+          estimatedReduction: 75,
+        },
+      ],
+      ans_5: [
+        {
+          message: `Add PCSK9i`,
+          estimatedReduction: 60,
+        },
+      ],
+    },
+    acheiveMessage: `Estimated New LDL-C Achieved`,
   },
 };
 

@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
+import { setPatientTreatment } from "../store/LdlDataReducer";
 import { getTargetLdl, getLdlInMg } from "../util";
 export default function PageTwo({ paginate }) {
   const { title, subTitle, targetText, question, answers, choiseEightMessage } =
@@ -9,10 +10,10 @@ export default function PageTwo({ paginate }) {
   const { unintPerLiter, unintPerDLiter } = useSelector(
     (state) => state.staticData.pageOne
   );
-  const { ldlValue, criteriaApplyOnPatient } = useSelector(
+  const { ldlValue, criteriaApplyOnPatient, patientTreatment } = useSelector(
     (state) => state.ldlData
   );
-
+  const dispatch = useDispatch();
   const targetLdlInMol = useMemo(() => {
     return getTargetLdl(ldlValue, criteriaApplyOnPatient);
   }, [ldlValue, criteriaApplyOnPatient]);
@@ -42,10 +43,10 @@ export default function PageTwo({ paginate }) {
             <div className="answer" key={id}>
               <Checkbox
                 inputId={id}
-                // checked={criteriaApplyOnPatient.includes(id)}
-                // onChange={() => {
-                //   dispatch(updateSelectedCriteriaApplyOnPatient(id));
-                // }}
+                checked={patientTreatment === id}
+                onChange={() => {
+                  dispatch(setPatientTreatment(id));
+                }}
               />
               <label htmlFor={id}>{message}</label>
             </div>
@@ -62,6 +63,7 @@ export default function PageTwo({ paginate }) {
           }}
         />
         <Button
+          disabled={!patientTreatment.length}
           icon="pi pi-caret-right"
           label="Next"
           iconPos="right"

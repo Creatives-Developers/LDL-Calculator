@@ -7,7 +7,6 @@ export const getLdlInMol = (ldlInMg) => {
 };
 
 export const getTargetLdl = (ldl = 0, criteriaApplied = []) => {
-  console.log(ldl, criteriaApplied);
   let targetLdl = 0;
   if (criteriaApplied.includes("ans-7") && ldl > 2) {
     targetLdl = 1;
@@ -18,4 +17,9 @@ export const getTargetLdl = (ldl = 0, criteriaApplied = []) => {
   }
 
   return targetLdl;
+};
+
+export const getEstimatedLdl = (currentLdl, estimatedReduction = 0) => {
+  const reductionPercentage = (100 - estimatedReduction) / 100.0;
+  return (currentLdl * reductionPercentage).toFixed(2);
 };
