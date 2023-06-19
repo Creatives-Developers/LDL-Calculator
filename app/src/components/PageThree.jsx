@@ -57,7 +57,9 @@ export default function PageThree({ paginate }) {
         <article className="estimation-result">
           <p>{acheiveMessage}</p>
           <span>{`${estimationLdlInMol} ${unintPerLiter}`}</span>
-          <span>{`${getLdlInMg(estimationLdlInMol)} ${unintPerDLiter}`}</span>
+          <span>{`${getLdlInMg(estimationLdlInMol).toFixed(
+            2
+          )} ${unintPerDLiter}`}</span>
           {isReachTarget ? (
             <p className="success">{"Reaching Target"}</p>
           ) : (

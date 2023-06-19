@@ -1,9 +1,9 @@
 export const getLdlInMg = (ldlInMol) => {
-  return ldlInMol == 0 ? "" : (ldlInMol * 38.67).toFixed(2);
+  return ldlInMol == 0 ? "" : ldlInMol * 38.67;
 };
 
 export const getLdlInMol = (ldlInMg) => {
-  return ldlInMg == 0 ? "" : (ldlInMg / 38.67).toFixed(2);
+  return ldlInMg == 0 ? "" : ldlInMg / 38.67;
 };
 
 export const getTargetLdl = (ldl = 0, criteriaApplied = []) => {

@@ -29,8 +29,8 @@ export default function PageTwo({ paginate }) {
             <>
               <span>{targetText}</span>
               <span className="value">{`${targetLdlInMol} ${unintPerLiter}`}</span>
-              <span className="value">{`${getLdlInMg(
-                targetLdlInMol
+              <span className="value">{`${getLdlInMg(targetLdlInMol).toFixed(
+                2
               )} ${unintPerDLiter}`}</span>
             </>
           )}
