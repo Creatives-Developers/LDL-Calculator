@@ -23,3 +23,17 @@ export const getEstimatedLdl = (currentLdl, estimatedReduction = 0) => {
   const reductionPercentage = (100 - estimatedReduction) / 100.0;
   return (currentLdl * reductionPercentage).toFixed(2);
 };
+
+export const wrapIntoLink = (statement, targetWord, route = "#") => {
+  return statement.split(" ").map((word) => {
+    if (targetWord === word.replaceAll("__", " ")) {
+      return (
+        <a href={route} target="_blank" rel="noreferrer">
+          {targetWord}
+        </a>
+      );
+    } else {
+      return ` ${word} `;
+    }
+  });
+};

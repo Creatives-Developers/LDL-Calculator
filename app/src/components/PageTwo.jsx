@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
 import { setPatientTreatment } from "../store/LdlDataReducer";
-import { getTargetLdl, getLdlInMg } from "../util";
+import { getTargetLdl, getLdlInMg, wrapIntoLink } from "../util";
 export default function PageTwo({ paginate }) {
   const { title, subTitle, targetText, question, answers, choiseEightMessage } =
     useSelector((state) => state.staticData.pageTwo);
@@ -24,7 +24,13 @@ export default function PageTwo({ paginate }) {
         <p className="sub-title">{subTitle}</p>
         <p className="target">
           {criteriaApplyOnPatient.includes("ans-8") ? (
-            <p className="hint">{choiseEightMessage}</p>
+            <p className="hint">
+              {wrapIntoLink(
+                choiseEightMessage,
+                "ESC 2019 guidelines",
+                "https://academic.oup.com/eurheartj/article/41/1/111/5556353"
+              )}
+            </p>
           ) : (
             <>
               <span>{targetText}</span>

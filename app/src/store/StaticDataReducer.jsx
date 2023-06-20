@@ -75,7 +75,7 @@ const initialState = {
       //   message: "PCSK9 inhibitor plus high intensity statin",
       // },
     ],
-    choiseEightMessage: `This is not a "very risk patient", kindly refer back to ESC 2019 guidelines for LDL-C targets recommendations`,
+    choiseEightMessage: `This is not a "very high risk patient", kindly refer back to ESC__2019__guidelines for LDL-C targets recommendations`,
   },
   pageThree: {
     data: {

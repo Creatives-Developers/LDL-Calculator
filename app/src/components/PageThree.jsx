@@ -59,8 +59,8 @@ export default function PageThree({ paginate }) {
           <div>
             <p>{acheiveMessage}</p>
             <span>{`${estimationLdlInMol} ${unintPerLiter}`}</span>
-            <span>{`${getLdlInMg(estimationLdlInMol).toFixed(
-              2
+            <span>{`${Math.round(
+              getLdlInMg(estimationLdlInMol)
             )} ${unintPerDLiter}`}</span>
           </div>
           <div>
