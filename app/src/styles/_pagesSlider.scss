@@ -105,27 +105,38 @@ $paddingValue: 1.2rem;
         .estimation-result {
           margin: auto 0;
           padding: 25px 0;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
           text-align: center;
           font-size: 1.5rem;
-          p {
-            margin-top: 15px;
-            &:first-of-type {
-              font-weight: bold;
+          gap: 20px;
+          div {
+            padding: 20px 1rem;
+            &.estimation-reduction {
+              flex-basis: 25%;
             }
-            &.success {
-              color: $success-color;
+
+            p {
+              margin-top: 15px;
+              &:first-of-type {
+                font-weight: bold;
+              }
+              &.success {
+                color: $success-color;
+              }
+              &.danger {
+                color: $danger-color;
+              }
             }
-            &.danger {
-              color: $danger-color;
+            span {
+              display: inline-block;
+              padding-inline-start: 5px;
+              background: $value-background;
+              margin: 25px 10px;
+              padding: 10px 15px;
+              border-radius: 5px;
             }
-          }
-          span {
-            display: inline-block;
-            padding-inline-start: 5px;
-            background: $value-background;
-            margin: 25px 10px;
-            padding: 10px 15px;
-            border-radius: 5px;
           }
         }
       }

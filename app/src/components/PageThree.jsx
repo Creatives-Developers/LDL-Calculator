@@ -13,9 +13,8 @@ export default function PageThree({ paginate }) {
     (state) => state.ldlData
   );
   const { answers } = useSelector((state) => state.staticData.pageTwo);
-  const { data, acheiveMessage } = useSelector(
-    (state) => state.staticData.pageThree
-  );
+  const { data, acheiveMessage, targetTitle, estimationReductionTitle } =
+    useSelector((state) => state.staticData.pageThree);
   const targetLdlInMol = useMemo(() => {
     return getTargetLdl(ldlValue, criteriaApplyOnPatient);
   }, [ldlValue, criteriaApplyOnPatient]);
@@ -46,25 +45,32 @@ export default function PageThree({ paginate }) {
                   setSelectedOption({ message, estimatedReduction });
                 }}
               />
-              <label
-                htmlFor={message}
-              >{`${message} (${estimatedReduction}%)`}</label>
+              <label htmlFor={message}>{`${message} `}</label>
             </div>
           ))}
         </div>
       </article>
       {selectedOption.estimatedReduction && (
         <article className="estimation-result">
-          <p>{acheiveMessage}</p>
-          <span>{`${estimationLdlInMol} ${unintPerLiter}`}</span>
-          <span>{`${getLdlInMg(estimationLdlInMol).toFixed(
-            2
-          )} ${unintPerDLiter}`}</span>
-          {isReachTarget ? (
-            <p className="success">{"Reaching Target"}</p>
-          ) : (
-            <p className="danger">{"Not Reaching Target"}</p>
-          )}
+          <div className="estimation-reduction">
+            <p>{estimationReductionTitle}</p>
+            <span>{`${selectedOption.estimatedReduction}% `}</span>
+          </div>
+          <div>
+            <p>{acheiveMessage}</p>
+            <span>{`${estimationLdlInMol} ${unintPerLiter}`}</span>
+            <span>{`${getLdlInMg(estimationLdlInMol).toFixed(
+              2
+            )} ${unintPerDLiter}`}</span>
+          </div>
+          <div>
+            <p>{targetTitle}</p>
+            {isReachTarget ? (
+              <p className="success">{"Reaching Target"}</p>
+            ) : (
+              <p className="danger">{"Not Reaching Target"}</p>
+            )}
+          </div>
         </article>
       )}
       <footer className="space-bwteen">
