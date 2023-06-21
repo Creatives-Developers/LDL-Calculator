@@ -84,7 +84,7 @@ export default function PageThree({ paginate }) {
         />
         <Button
           icon="pi pi-replay"
-          label="Clear"
+          label="Start Over"
           iconPos="right"
           onClick={() => {
             paginate(1);

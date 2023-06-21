@@ -28,7 +28,7 @@ export const wrapIntoLink = (statement, targetWord, route = "#") => {
   return statement.split(" ").map((word) => {
     if (targetWord === word.replaceAll("__", " ")) {
       return (
-        <a href={route} target="_blank" rel="noreferrer">
+        <a key={word} href={route} target="_blank" rel="noreferrer">
           {targetWord}
         </a>
       );

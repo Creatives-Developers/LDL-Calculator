@@ -2,14 +2,15 @@ import React, { useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
-import { setPatientTreatment } from "../store/LdlDataReducer";
+import { setPatientTreatment, resetLdlData } from "../store/LdlDataReducer";
 import { getTargetLdl, getLdlInMg, wrapIntoLink } from "../util";
 export default function PageTwo({ paginate }) {
-  const { title, subTitle, targetText, question, answers, choiseEightMessage } =
-    useSelector((state) => state.staticData.pageTwo);
   const { unintPerLiter, unintPerDLiter } = useSelector(
     (state) => state.staticData.pageOne
   );
+  const { title, subTitle, targetText, question, answers, choiseEightMessage } =
+    useSelector((state) => state.staticData.pageTwo);
+
   const { ldlValue, criteriaApplyOnPatient, patientTreatment } = useSelector(
     (state) => state.ldlData
   );
@@ -24,13 +25,13 @@ export default function PageTwo({ paginate }) {
         <p className="sub-title">{subTitle}</p>
         <p className="target">
           {criteriaApplyOnPatient.includes("ans-8") ? (
-            <p className="hint">
+            <span className="hint">
               {wrapIntoLink(
                 choiseEightMessage,
                 "ESC 2019 guidelines",
                 "https://academic.oup.com/eurheartj/article/41/1/111/5556353"
               )}
-            </p>
+            </span>
           ) : (
             <>
               <span>{targetText}</span>
@@ -42,23 +43,25 @@ export default function PageTwo({ paginate }) {
           )}
         </p>
       </article>
-      <article className="patient-treatment">
-        <p>{question}</p>
-        <div className="answers-container">
-          {answers.map(({ id, message }) => (
-            <div className="answer" key={id}>
-              <Checkbox
-                inputId={id}
-                checked={patientTreatment === id}
-                onChange={() => {
-                  dispatch(setPatientTreatment(id));
-                }}
-              />
-              <label htmlFor={id}>{message}</label>
-            </div>
-          ))}
-        </div>
-      </article>
+      {!criteriaApplyOnPatient.includes("ans-8") && (
+        <article className="patient-treatment">
+          <p>{question}</p>
+          <div className="answers-container">
+            {answers.map(({ id, message }) => (
+              <div className="answer" key={id}>
+                <Checkbox
+                  inputId={id}
+                  checked={patientTreatment === id}
+                  onChange={() => {
+                    dispatch(setPatientTreatment(id));
+                  }}
+                />
+                <label htmlFor={id}>{message}</label>
+              </div>
+            ))}
+          </div>
+        </article>
+      )}
       <footer className="space-bwteen">
         <Button
           icon="pi pi-caret-left"
@@ -68,15 +71,27 @@ export default function PageTwo({ paginate }) {
             paginate(-1);
           }}
         />
-        <Button
-          disabled={!patientTreatment.length}
-          icon="pi pi-caret-right"
-          label="Next"
-          iconPos="right"
-          onClick={() => {
-            paginate(1);
-          }}
-        />
+        {criteriaApplyOnPatient.includes("ans-8") ? (
+          <Button
+            icon="pi pi-replay"
+            label="Start Over"
+            iconPos="right"
+            onClick={() => {
+              paginate(-1);
+              dispatch(resetLdlData());
+            }}
+          />
+        ) : (
+          <Button
+            disabled={!patientTreatment.length}
+            icon="pi pi-caret-right"
+            label="Next"
+            iconPos="right"
+            onClick={() => {
+              paginate(1);
+            }}
+          />
+        )}
       </footer>
     </section>
   );
