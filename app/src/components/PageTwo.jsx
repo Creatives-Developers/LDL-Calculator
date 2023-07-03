@@ -3,13 +3,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
 import { setPatientTreatment, resetLdlData } from "../store/LdlDataReducer";
-import { getTargetLdl, getLdlInMg, wrapIntoLink } from "../util";
+import { getTargetLdl, getLdlInMg } from "../util";
 export default function PageTwo({ paginate }) {
   const { unintPerLiter, unintPerDLiter } = useSelector(
     (state) => state.staticData.pageOne
   );
-  const { title, subTitle, targetText, question, answers, choiseEightMessage } =
-    useSelector((state) => state.staticData.pageTwo);
+  const {
+    title,
+    subTitle,
+    question,
+    answers,
+    choiseEightMessage,
+    recommendPrefix,
+    recommendsuffix,
+  } = useSelector((state) => state.staticData.pageTwo);
 
   const { ldlValue, criteriaApplyOnPatient, patientTreatment } = useSelector(
     (state) => state.ldlData
@@ -23,25 +30,22 @@ export default function PageTwo({ paginate }) {
       <article className="conclusion">
         <p className="title">{title}</p>
         <p className="sub-title">{subTitle}</p>
-        <p className="target">
+        <div className="target">
           {criteriaApplyOnPatient.includes("ans-8") ? (
-            <span className="hint">
-              {wrapIntoLink(
-                choiseEightMessage,
-                "ESC 2019 guidelines",
-                "https://academic.oup.com/eurheartj/article/41/1/111/5556353"
-              )}
-            </span>
+            <span className="hint">{choiseEightMessage}</span>
           ) : (
             <>
-              <span>{targetText}</span>
-              <span className="value">{`${targetLdlInMol} ${unintPerLiter}`}</span>
-              <span className="value">{`${getLdlInMg(targetLdlInMol).toFixed(
-                2
-              )} ${unintPerDLiter}`}</span>
+              <span className="prefix">{recommendPrefix}</span>
+              <div>
+                <span className="value">{`${targetLdlInMol} ${unintPerLiter}`}</span>
+                <span className="value">{`${getLdlInMg(targetLdlInMol).toFixed(
+                  1
+                )} ${unintPerDLiter}`}</span>
+              </div>
+              <span className="suffix">{recommendsuffix}</span>
             </>
           )}
-        </p>
+        </div>
       </article>
       {!criteriaApplyOnPatient.includes("ans-8") && (
         <article className="patient-treatment">

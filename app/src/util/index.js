@@ -1,9 +1,9 @@
 export const getLdlInMg = (ldlInMol) => {
-  return ldlInMol == 0 ? "" : ldlInMol * 38.67;
+  return ldlInMol == 0 ? "" : ldlInMol * 39;
 };
 
 export const getLdlInMol = (ldlInMg) => {
-  return ldlInMg == 0 ? "" : ldlInMg / 38.67;
+  return ldlInMg == 0 ? "" : ldlInMg / 39;
 };
 
 export const getTargetLdl = (ldl = 0, criteriaApplied = []) => {
@@ -13,15 +13,16 @@ export const getTargetLdl = (ldl = 0, criteriaApplied = []) => {
   } else if (!criteriaApplied.includes("ans-7") && ldl > 2.8) {
     targetLdl = 1.4;
   } else {
-    targetLdl = (ldl / 2).toFixed(2);
+    // targetLdl = (ldl / 2).toFixed(1);
+    targetLdl = ldl;
   }
 
-  return targetLdl;
+  return targetLdl.toFixed(1);
 };
 
 export const getEstimatedLdl = (currentLdl, estimatedReduction = 0) => {
   const reductionPercentage = (100 - estimatedReduction) / 100.0;
-  return (currentLdl * reductionPercentage).toFixed(2);
+  return (currentLdl * reductionPercentage).toFixed(1);
 };
 
 export const wrapIntoLink = (statement, targetWord, route = "#") => {

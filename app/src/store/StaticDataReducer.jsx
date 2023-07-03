@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   pageOne: {
-    title: "LDL-C Predictability Calculator",
+    title: "Patient's Current LDL-C",
     unintPerLiter: "mmol/L",
     unintPerDLiter: "mg/dL",
     question:
@@ -20,14 +20,15 @@ const initialState = {
         id: "ans-3",
         message: "FH with ASCVD or with another major risk factor",
       },
-      { id: "ans-4", message: "Severe CKD (eGFR <30 mL/min)" },
+      { id: "ans-4", message: "Severe CKD {eGFR <30 mL/min/1.73 m²}" },
       {
         id: "ans-5",
-        message: "DM & target organ damage: ≥3 major risk factors",
+        message:
+          "DM with target organ damage, or at least three major risk factors, or early onset of T1DM of long duration {>20 years}",
       },
       {
         id: "ans-6",
-        message: "early onset of T1DM of long duration (>20 years)",
+        message: "Early onset of T1DM of long duration (>20 years)",
       },
       {
         id: "ans-7",
@@ -41,10 +42,11 @@ const initialState = {
     ],
   },
   pageTwo: {
-    title: "Conclusion",
+    title: "Recommended LDL-C Target",
     subTitle: 'As per 2019 ESC Guidelines, this is a "Very High" Risk Patient',
-    targetText: "Target LDL-C Should Be",
     question: `Patient's Current Treatment`,
+    recommendPrefix: "LDL-C Target should be less than",
+    recommendsuffix: "+ ≥ 50% LDL-C Reduction from baseline",
     answers: [
       {
         id: "ans_1",
@@ -66,16 +68,8 @@ const initialState = {
         id: "ans_5",
         message: "High intensity statin plus ezetimibe",
       },
-      // {
-      //   id: "ans-6",
-      //   message: "PCSK9 inhibitor ",
-      // },
-      // {
-      //   id: "ans-7",
-      //   message: "PCSK9 inhibitor plus high intensity statin",
-      // },
     ],
-    choiseEightMessage: `This is not a "very high risk patient", kindly refer back to ESC__2019__guidelines for LDL-C targets recommendations`,
+    choiseEightMessage: `This is not a "very high risk patient", kindly refer back to ESC 2019 guidelines for LDL-C targets recommendations`,
   },
   pageThree: {
     data: {
@@ -117,7 +111,7 @@ const initialState = {
       ans_4: [
         {
           message: `Add ezetimibe`,
-          estimatedReduction: 6,
+          estimatedReduction: 15,
         },
         {
           message: `Add ezetimibe + PCSK9 inhibitor`,

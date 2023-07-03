@@ -66,9 +66,9 @@ export default function PageThree({ paginate }) {
           <div>
             <p>{targetTitle}</p>
             {isReachTarget ? (
-              <p className="success">{"Reaching Target"}</p>
+              <p className="success">{"Reaching LDL-C Target"}</p>
             ) : (
-              <p className="danger">{"Not Reaching Target"}</p>
+              <p className="danger">{"Not Reaching LDL-C Target"}</p>
             )}
           </div>
         </article>

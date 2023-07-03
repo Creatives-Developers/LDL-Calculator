@@ -1,13 +1,13 @@
 @import "./shared";
 
-$paddingValue: 1.2rem;
+$paddingValue: 1rem;
 .pages-slider {
   height: 100%;
   .page-wrapper {
     height: inherit;
     .page {
       position: relative;
-      padding: 15px;
+      padding: $paddingValue;
       height: inherit;
       display: flex;
       flex-direction: column;
@@ -20,6 +20,7 @@ $paddingValue: 1.2rem;
       .patient-treatment,
       .options {
         padding: $paddingValue;
+
         p {
           font-size: 1.5rem;
           font-weight: bold;
@@ -38,6 +39,10 @@ $paddingValue: 1.2rem;
               font-size: 1rem;
             }
           }
+        }
+        @include md {
+          padding: 0;
+          margin-block: 1rem;
         }
       }
       footer {
@@ -84,8 +89,10 @@ $paddingValue: 1.2rem;
           }
           .target {
             padding: 20px 1rem;
-            font-size: 1.65rem;
-            // text-align: center;
+            font-size: 1.5rem;
+            @include centerChilds;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             span {
               padding-inline-start: 5px;
               &.value {
@@ -98,18 +105,19 @@ $paddingValue: 1.2rem;
                 display: block;
                 text-align: center;
                 padding-top: 25px;
-
-                a {
-                  text-decoration: none;
-                  color: inherit;
-
-                  font-style: italic;
-                  &:hover {
-                    text-decoration: underline;
-                  }
-                }
+              }
+              &.suffix {
+                color: $danger-color;
+              }
+              &.prefix,
+              &.suffix {
+                font-size: 1.3rem;
               }
             }
+          }
+          @include md {
+            padding: 0;
+            margin-block: 1rem;
           }
         }
       }
@@ -124,6 +132,7 @@ $paddingValue: 1.2rem;
           font-size: 1.5rem;
           gap: 20px;
           div {
+            border: 5px solid $primary-color;
             padding: 20px 1rem;
             &.estimation-reduction {
               flex-basis: 25%;

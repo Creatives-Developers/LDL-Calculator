@@ -28,7 +28,7 @@ export default function PageOne({ paginate }) {
                 dispatch(setLdlValue(e.value));
               }}
               min={0}
-              maxFractionDigits={2}
+              maxFractionDigits={1}
               onCut={(e) => {
                 dispatch(setLdlValue(""));
               }}
@@ -43,7 +43,7 @@ export default function PageOne({ paginate }) {
                 dispatch(setLdlValue(getLdlInMol(e.value)));
               }}
               min={0}
-              maxFractionDigits={2}
+              maxFractionDigits={1}
               onCut={(e) => {
                 dispatch(setLdlValue(""));
               }}

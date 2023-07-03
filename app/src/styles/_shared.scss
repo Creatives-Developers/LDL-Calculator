@@ -95,7 +95,7 @@ $screen-lg-max: 992px;
   @include sm {
     font-size: 14px;
   }
-  // @include tn{
-  //     font-size: 10px;
-  // }
+  @include tn {
+    font-size: 12px;
+  }
 }
