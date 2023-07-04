@@ -3,17 +3,17 @@
   "name": "LDL-C Calculator",
   "icons": [
     {
-      "src": "64X64.ico",
+      "src": "logo64X64.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/png"
     },
     {
-      "src": "192X192.png",
+      "src": "logo192X192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "512X512.png",
+      "src": "logo512X512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
