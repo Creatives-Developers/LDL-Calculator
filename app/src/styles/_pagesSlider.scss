@@ -6,13 +6,20 @@ $paddingValue: 1rem;
   .page-wrapper {
     height: inherit;
     .page {
+      h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        position: relative;
+        bottom: 1rem;
+      }
       position: relative;
       padding: $paddingValue;
       height: inherit;
       display: flex;
       flex-direction: column;
       .title {
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: bold;
         @include md {
           text-align: center;
@@ -25,7 +32,7 @@ $paddingValue: 1rem;
         padding: $paddingValue;
 
         p {
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           font-weight: bold;
         }
         .answers-container {

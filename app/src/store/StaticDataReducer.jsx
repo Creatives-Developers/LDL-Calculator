@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   pageOne: {
-    title: "Patient's Current LDL-C",
+    projetName: "LDL-C Predicatability Calculator",
+    pageTitle: "Patient's Current LDL-C",
     unintPerLiter: "mmol/L",
     unintPerDLiter: "mg/dL",
     question:

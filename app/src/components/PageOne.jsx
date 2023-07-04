@@ -9,16 +9,23 @@ import {
 } from "../store/LdlDataReducer";
 import { getLdlInMg, getLdlInMol } from "../util";
 export default function PageOne({ paginate }) {
-  const { title, unintPerLiter, unintPerDLiter, question, answers } =
-    useSelector((state) => state.staticData.pageOne);
+  const {
+    projetName,
+    pageTitle,
+    unintPerLiter,
+    unintPerDLiter,
+    question,
+    answers,
+  } = useSelector((state) => state.staticData.pageOne);
   const { ldlValue, criteriaApplyOnPatient } = useSelector(
     (state) => state.ldlData
   );
   const dispatch = useDispatch();
   return (
     <section className="page page-one">
+      <h1>{projetName}</h1>
       <article className="patient-ldl">
-        <p className="title"> {title}</p>
+        <p className="title"> {pageTitle}</p>
         <div className="input-container">
           <div className="input-item">
             <p>{unintPerLiter}</p>

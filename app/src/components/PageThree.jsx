@@ -54,7 +54,10 @@ export default function PageThree({ paginate }) {
         <article className="estimation-result">
           <div className="estimation-reduction">
             <p>{estimationReductionTitle}</p>
-            <span>{`${selectedOption.estimatedReduction}% `}</span>
+            <p>
+              {"Average"}
+              <span>{`${selectedOption.estimatedReduction}% `}</span>
+            </p>
           </div>
           <div>
             <p>{acheiveMessage}</p>
