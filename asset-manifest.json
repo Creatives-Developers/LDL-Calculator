@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/LDL-Calculator/static/css/main.574809a5.css",
-    "main.js": "/LDL-Calculator/static/js/main.f26c9783.js",
+    "main.css": "/LDL-Calculator/static/css/main.f60d6879.css",
+    "main.js": "/LDL-Calculator/static/js/main.f99294ee.js",
     "static/js/787.c1112931.chunk.js": "/LDL-Calculator/static/js/787.c1112931.chunk.js",
     "static/media/primeicons.svg": "/LDL-Calculator/static/media/primeicons.e1441b135b3ca9ad643c.svg",
     "static/media/primeicons.eot": "/LDL-Calculator/static/media/primeicons.d44157bdfa026dc877af.eot",
@@ -10,12 +10,12 @@
     "static/media/primeicons.woff2": "/LDL-Calculator/static/media/primeicons.78172950b335ccdb94e2.woff2",
     "static/media/color.png": "/LDL-Calculator/static/media/color.6441e63a57ccc5105bad.png",
     "index.html": "/LDL-Calculator/index.html",
-    "main.574809a5.css.map": "/LDL-Calculator/static/css/main.574809a5.css.map",
-    "main.f26c9783.js.map": "/LDL-Calculator/static/js/main.f26c9783.js.map",
+    "main.f60d6879.css.map": "/LDL-Calculator/static/css/main.f60d6879.css.map",
+    "main.f99294ee.js.map": "/LDL-Calculator/static/js/main.f99294ee.js.map",
     "787.c1112931.chunk.js.map": "/LDL-Calculator/static/js/787.c1112931.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.574809a5.css",
-    "static/js/main.f26c9783.js"
+    "static/css/main.f60d6879.css",
+    "static/js/main.f99294ee.js"
   ]
 }
